@@ -79,6 +79,26 @@
 <p>//you can add attachment or whatever, just type iM.Attachment &lt;-- for example
     after you run this code (above), you'll see hidden folder ixMail, you can add your custom tamplate there.</p>
 
+<p>how to create your own tamplete?</p>
+
+<p>you create txtfile or html, with object example object to send : new SelectListItem { Value = "Value", Text = "Text", Selected = true };</p>
+
+<pre><code>you create your html file just like this
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Value : {{Value}}
+    Text : {{Value}}
+    Selected : {{Value}}
+&lt;/body&gt;
+&lt;/html&gt;
+
+save it, place it into IxMail folder
+the separator {{ }} will replace your value.
+</code></pre>
+
 <p>hidden folder :</p>
 
 <hr>
