@@ -69,19 +69,11 @@
     **just run the code below : **
 
 
-      using (IxMailMessage iM = new IxMailMessage())
-        {
-            iM.mailBody = new messageClass
-            {
-                display = true,
-                message = "this is message",
-                type = "this is type"
-            };
-            iM.To.Add("ix.habibi@gmail.com");
-            iM.Subject = "test";
-
-            EmailSender.SendMailAsync(iM);
-        }
+        IxMailMessage iM = new IxMailMessage();
+        iM.mailBody = new SelectListItem { Value = "Value", Text = "Text", Selected = true };
+        iM.To.Add("ix.habibi@gmail.com");
+        iM.Subject = "this is subject";
+        EmailCore.SendMailAsync(iM);
 </code></pre>
 
 <p>//you can add attachment or whatever, just type iM.Attachment &lt;-- for example
