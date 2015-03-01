@@ -71,7 +71,7 @@
 
         IxMailMessage iM = new IxMailMessage();
         iM.mailBody = new SelectListItem { Value = "Value", Text = "Text", Selected = true };
-        iM.To.Add("ix.habibi@gmail.com");
+        iM.To.Add("yourmail");
         iM.Subject = "this is subject";
         EmailSender.SendMailAsync(iM);
 </code></pre>
