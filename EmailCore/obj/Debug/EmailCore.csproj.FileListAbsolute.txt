@@ -1,5 +1,0 @@
-c:\users\ixan\documents\visual studio 2013\Projects\EmailCore\EmailCore\bin\Debug\EmailCore.dll
-c:\users\ixan\documents\visual studio 2013\Projects\EmailCore\EmailCore\bin\Debug\EmailCore.pdb
-c:\users\ixan\documents\visual studio 2013\Projects\EmailCore\EmailCore\obj\Debug\EmailCore.dll
-c:\users\ixan\documents\visual studio 2013\Projects\EmailCore\EmailCore\obj\Debug\EmailCore.pdb
-C:\Users\ixan\Documents\Visual Studio 2013\Projects\EmailCore\EmailCore\obj\Debug\EmailCore.csprojResolveAssemblyReference.cache
