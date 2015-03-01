@@ -238,3 +238,4 @@ namespace IxMail
         public string tamplateMail { get; set; }
     }
 }
+
