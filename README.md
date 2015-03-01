@@ -33,7 +33,7 @@ after installation you'll see your web.config file change like this :
             iM.mailBody = new SelectListItem { Value = "Value", Text = "Text", Selected = true };
             iM.To.Add("ix.habibi@gmail.com");
             iM.Subject = "this is subject";
-            EmailCore.SendMailAsync(iM);
+            EmailSender.SendMailAsync(iM);
             
     how to create your tamplate?
     
