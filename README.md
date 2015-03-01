@@ -31,7 +31,7 @@ after installation you'll see your web.config file change like this :
 		
             IxMailMessage iM = new IxMailMessage();
             iM.mailBody = new SelectListItem { Value = "Value", Text = "Text", Selected = true };
-            iM.To.Add("ix.habibi@gmail.com");
+            iM.To.Add("emailto");
             iM.Subject = "this is subject";
             EmailSender.SendMailAsync(iM);
             
