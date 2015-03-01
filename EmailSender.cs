@@ -14,9 +14,9 @@ namespace IxMail
     public static class EmailSender
     {
         private static SmtpSection section = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");
-        private static string folder = "~/IxMail/";
+        private static string folder = "~/EmailTemplate/";
         private static string demoFile = "Demo.html";
-        public static Task<string> BuildBodyAsync(object mailBody, string tamplateMail, string pathFolder)
+        private static Task<string> BuildBodyAsync(object mailBody, string tamplateMail, string pathFolder)
         {
             var task = new Task<string>(() =>
             {
@@ -63,7 +63,7 @@ namespace IxMail
 
             return task;
         }
-        public static string BuildBody(object mailBody, string tamplateMail)
+        private static string BuildBody(object mailBody, string tamplateMail)
         {
             if (string.IsNullOrEmpty(tamplateMail)) tamplateMail = demoFile;
             string body = ReadFileFrom(tamplateMail);
@@ -160,8 +160,36 @@ namespace IxMail
 
                 if (body.IsCompleted)
                 {
-                    ExecuteSend(mail, pathFolder);
+                    try
+                    {
+                        using (var smtpClient = new SmtpClient())
+                        {
+                            smtpClient.Send(mail);
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        string path = pathFolder + "Error_" + DateTime.Now.ToString("dd_MMM_yyyy") + ".txt";
+                        if (!File.Exists(path))
+                        {
+                            (new FileInfo(path)).Directory.Create();
+                            using (TextWriter tw = new StreamWriter(path))
+                            {
+                                tw.WriteLine(mail.Subject + "|" + mail.Body + "|" + e.ToString() + Environment.NewLine);
+                                tw.Close();
+                            }
+                        }
+                        else
+                        {
+                            using (StreamWriter tw = File.AppendText(path))
+                            {
+                                tw.WriteLine(mail.Subject + "|" + e.ToString() + Environment.NewLine);
+                                tw.Close();
+                            }
+                        }
+                    }
                 }
+
 
             }).Start();
         }
@@ -172,21 +200,17 @@ namespace IxMail
             mail.From = new MailAddress(section.From);
             mail.Body = BuildBody(mail.mailBody, mail.tamplateMail);
             mail.IsBodyHtml = true;
-            ExecuteSend(mail, pathFolder);
-        }
-        private static void ExecuteSend(IxMailMessage mail, string folder)
-        {
+
             try
             {
                 using (var smtpClient = new SmtpClient())
                 {
                     smtpClient.Send(mail);
                 }
-
             }
             catch (Exception e)
             {
-                string path = folder + "Error_" + DateTime.Now.ToString("dd_MMM_yyyy") + ".txt";
+                string path = pathFolder + "Error_" + DateTime.Now.ToString("dd_MMM_yyyy") + ".txt";
                 if (!File.Exists(path))
                 {
                     (new FileInfo(path)).Directory.Create();
@@ -212,6 +236,4 @@ namespace IxMail
     {
         public object mailBody { get; set; }
         public string tamplateMail { get; set; }
-
     }
-}
