@@ -49,8 +49,8 @@ after installation you'll see your web.config file change like this :
     </head>
     <body>
         Value : {{Value}}
-        Text : {{Value}}
-        Selected : {{Value}}
+        Text : {{Text}}
+        Selected : {{Selected}}
     </body>
     </html>
     
