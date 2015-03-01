@@ -14,7 +14,7 @@ namespace IxMail
     public static class EmailSender
         {
         private static SmtpSection section = (SmtpSection)ConfigurationManager.GetSection("system.net/mailSettings/smtp");
-        private static string folder = "~/EmailTemplate/";
+        private static string folder = "~/IxMail/";
         private static string demoFile = "Demo.html";
         private static Task<string> BuildBodyAsync(object mailBody, string tamplateMail, string pathFolder)
         {
