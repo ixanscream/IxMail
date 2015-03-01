@@ -77,17 +77,14 @@
                 message = "this is message",
                 type = "this is type"
             };
-</code></pre>
+            iM.To.Add("ix.habibi@gmail.com");
+            iM.Subject = "test";
 
-<p>// you can add attachment or whatever, here.
-                iM.To.Add("<a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a>");
-                iM.Subject = "test";</p>
-
-<pre><code>            EmailSender.SendMailAsync(iM);
+            EmailSender.SendMailAsync(iM);
         }
 </code></pre>
 
-<p>//
+<p>//you can add attachment or whatever, just type iM.Attachment &lt;-- for example
     after you run this code (above), you'll see hidden folder ixMail, you can add your custom tamplate there.</p>
 
 <p>hidden folder :</p>
