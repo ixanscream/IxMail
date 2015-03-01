@@ -1,57 +1,103 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ixmail : Mail ASP.NET Helper templating">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Ixmail by ixanscream</title>
+    <title>Ixmail</title>
   </head>
 
   <body>
 
-    <header>
-      <div class="container">
-        <h1>Ixmail</h1>
-        <h2>Mail ASP.NET Helper templating</h2>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ixanscream/IxMail">View on GitHub</a>
 
-        <section id="downloads">
-          <a href="https://github.com/ixanscream/IxMail/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/ixanscream/IxMail/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/ixanscream/IxMail" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+          <h1 id="project_title">Ixmail</h1>
+          <h2 id="project_tagline">Mail ASP.NET Helper templating</h2>
 
-    <div class="container">
-      <section id="main_content">
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ixanscream/IxMail/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ixanscream/IxMail/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>
 <a id="newbie-here" class="anchor" href="#newbie-here" aria-hidden="true"><span class="octicon octicon-link"></span></a>Newbie here</h1>
 
 <p>this package run on .net 4 or higher.</p>
 
-<p>Install with nuget on visual studio :</p>
-
 <h1>
-<a id="pm-install-package-ixmail" class="anchor" href="#pm-install-package-ixmail" aria-hidden="true"><span class="octicon octicon-link"></span></a>PM&gt; Install-Package IxMail</h1>
+<a id="ixmail" class="anchor" href="#ixmail" aria-hidden="true"><span class="octicon octicon-link"></span></a>IxMail</h1>
 
-<p>after installation
-<img src="http://oi59.tinypic.com/2czsx06.jpg" alt=""></p>
+<p>Mail ASP.NET Helper tamplating</p>
 
-<p>how to use it
-<img src="http://oi61.tinypic.com/ieo47p.jpg" alt=""></p>
+<p>install this package using nuget package visual studio : </p>
 
-<p>you can add your custom tamplate into folder <strong>IxMail</strong> tamplate html, cshtml or txt
-if got any error you can look into hidden folder <strong>IxMail</strong></p>
+<p>PM&gt; Install-Package IxMail </p>
 
-<p><img src="http://oi60.tinypic.com/r0qtjt.jpg" alt=""></p>
+<p>after installation you'll see your web.config file change like this :</p>
+
+<pre><code>    &lt;mailSettings&gt;
+        &lt;!-- Method#1: Configure smtp server credentials --&gt;
+        &lt;smtp from="user@gmail.com"&gt;
+            &lt;network enableSsl="true" host="smtp.gmail.com" port="587" userName="user@gmail.com" password="password" /&gt;
+        &lt;/smtp&gt;
+
+        &lt;!-- Method#2: Dump emails to a local directory --&gt;
+        &lt;!--
+        &lt;smtp from="some-email@gmail.com" deliveryMethod="SpecifiedPickupDirectory"&gt;
+            &lt;network host="localhost"/&gt;
+            &lt;specifiedPickupDirectory pickupDirectoryLocation="c:\temp\"/&gt;
+        &lt;/smtp&gt;
+        --&gt;
+    &lt;/mailSettings&gt;
+
+    just run the code below :
+
+
+after you run this code (below), you'll see hidden folder ixMail, you can add your custom tamplate there.
+you can add attachment or whatever, into code written above.
+
+      using (IxMailMessage iM = new IxMailMessage())
+        {
+            iM.mailBody = new messageClass
+            {
+                display = true,
+                message = "this is message",
+                type = "this is type"
+            };
+
+            iM.To.Add("ix.habibi@gmail.com");
+            iM.Subject = "test";
+
+            EmailSender.SendMailAsync(iM);
+        }
+</code></pre>
+
+<p>hidden folder
+<img src="http://oi60.tinypic.com/r0qtjt.jpg" alt=""></p>
 
 <p>thank you
 if you got any error or something confused please email to <a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a> :D cheers</p>
       </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ixmail maintained by <a href="https://github.com/ixanscream">ixanscream</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
     </div>
 
               <script type="text/javascript">
@@ -64,6 +110,7 @@ if you got any error or something confused please email to <a href="mailto:ix.ha
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+
 
   </body>
 </html>
