@@ -25,6 +25,10 @@ after installation you'll see your web.config file change like this :
 		
 		just run the code below :
 		
+		
+    after you run this code (below), you'll see hidden folder ixMail, you can add your custom tamplate there.
+    you can add attachment or whatever, into code written above.
+		
           using (IxMailMessage iM = new IxMailMessage())
             {
                 iM.mailBody = new messageClass
@@ -40,5 +44,3 @@ after installation you'll see your web.config file change like this :
                 EmailSender.SendMailAsync(iM);
             }
             
-    after you run this code, you'll see hidden folder ixMail, you can add your custom tamplate there.
-    you can add attachment or whatever, into code written above.
