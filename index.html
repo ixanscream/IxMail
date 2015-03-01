@@ -68,8 +68,6 @@
 
     **just run the code below : **
 
-after you run this code (below), you'll see hidden folder ixMail, you can add your custom tamplate there.
-you can add attachment or whatever, into code written above.
 
       using (IxMailMessage iM = new IxMailMessage())
         {
@@ -79,13 +77,18 @@ you can add attachment or whatever, into code written above.
                 message = "this is message",
                 type = "this is type"
             };
+</code></pre>
 
-            iM.To.Add("ix.habibi@gmail.com");
-            iM.Subject = "test";
+<p>// you can add attachment or whatever, here.
+                iM.To.Add("<a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a>");
+                iM.Subject = "test";</p>
 
-            EmailSender.SendMailAsync(iM);
+<pre><code>            EmailSender.SendMailAsync(iM);
         }
 </code></pre>
+
+<p>//
+    after you run this code (above), you'll see hidden folder ixMail, you can add your custom tamplate there.</p>
 
 <p>hidden folder :</p>
 
