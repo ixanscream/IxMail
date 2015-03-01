@@ -73,7 +73,7 @@
         iM.mailBody = new SelectListItem { Value = "Value", Text = "Text", Selected = true };
         iM.To.Add("ix.habibi@gmail.com");
         iM.Subject = "this is subject";
-        EmailCore.SendMailAsync(iM);
+        EmailSender.SendMailAsync(iM);
 </code></pre>
 
 <p>//you can add attachment or whatever, just type iM.Attachment &lt;-- for example
