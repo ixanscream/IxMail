@@ -29,18 +29,33 @@ after installation you'll see your web.config file change like this :
     after you run this code (below), you'll see hidden folder ixMail, you can add your custom tamplate there.
     you can add attachment or whatever, into code written above.
 		
-          using (IxMailMessage iM = new IxMailMessage())
-            {
-                iM.mailBody = new messageClass
-                {
-                    display = true,
-                    message = "this is message",
-                    type = "this is type"
-                };
-
-                iM.To.Add("ix.habibi@gmail.com");
-                iM.Subject = "test";
-
-                EmailSender.SendMailAsync(iM);
-            }
+            IxMailMessage iM = new IxMailMessage();
+            iM.mailBody = new SelectListItem { Value = "Value", Text = "Text", Selected = true };
+            iM.To.Add("ix.habibi@gmail.com");
+            iM.Subject = "this is subject";
+            EmailCore.SendMailAsync(iM);
+            
+    how to create your tamplate?
+    
+    
+    you create txtfile or html, with object example :
+    
+    object to send : new SelectListItem { Value = "Value", Text = "Text", Selected = true };
+    
+    you create your html file just like this
+    
+    <html>
+    <head>
+    </head>
+    <body>
+        Value : {{Value}}
+        Text : {{Value}}
+        Selected : {{Value}}
+    </body>
+    </html>
+    
+    save it, place it into IxMail folder
+    the separator {{ }} will replace your value.
+    
+    
             
