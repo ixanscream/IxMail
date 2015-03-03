@@ -1,82 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Ixmail : Mail ASP.NET Helper templating">
+    <title>Ixmail by ixanscream</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Ixmail</title>
   </head>
-
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ixanscream/IxMail">View on GitHub</a>
+      <header>
+        <h1>Ixmail</h1>
+        <p>Mail ASP.NET Helper templating</p>
+      </header>
 
-          <h1 id="project_title">Ixmail</h1>
-          <h2 id="project_tagline">Mail ASP.NET Helper templating</h2>
+      <div id="banner">
+        <span id="logo"></span>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ixanscream/IxMail/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ixanscream/IxMail/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <a href="https://github.com/ixanscream/IxMail" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/ixanscream/IxMail/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/ixanscream/IxMail/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="newbie-here" class="anchor" href="#newbie-here" aria-hidden="true"><span class="octicon octicon-link"></span></a>Newbie here</h1>
-
-<p>this package run on .net 4 or higher.</p>
-
-<h1>
-<a id="ixmail" class="anchor" href="#ixmail" aria-hidden="true"><span class="octicon octicon-link"></span></a>IxMail</h1>
-
-<p>Mail ASP.NET Helper tamplating</p>
-
-<p>install this package using nuget package visual studio : </p>
-
-<h3>
-<a id="pm-install-package-ixmail" class="anchor" href="#pm-install-package-ixmail" aria-hidden="true"><span class="octicon octicon-link"></span></a>PM&gt; Install-Package IxMail</h3>
-
-<p>after installation you'll see your web.config file change like this :</p>
-
-<pre><code>    &lt;mailSettings&gt;
-        &lt;!-- Method#1: Configure smtp server credentials --&gt;
-        &lt;smtp from="user@gmail.com"&gt;
-            &lt;network enableSsl="true" host="smtp.gmail.com" port="587" userName="user@gmail.com" password="password" /&gt;
-        &lt;/smtp&gt;
-
-        &lt;!-- Method#2: Dump emails to a local directory --&gt;
-        &lt;!--
-        &lt;smtp from="some-email@gmail.com" deliveryMethod="SpecifiedPickupDirectory"&gt;
-            &lt;network host="localhost"/&gt;
-            &lt;specifiedPickupDirectory pickupDirectoryLocation="c:\temp\"/&gt;
-        &lt;/smtp&gt;
-        --&gt;
-    &lt;/mailSettings&gt;
-</code></pre>
-
-<p>thank you
-if you got any error or something confused please email to <a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a> :D cheers</p>
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <p>on going</p>
       </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Ixmail maintained by <a href="https://github.com/ixanscream">ixanscream</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/ixanscream">ixanscream</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
       </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
               <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -87,7 +57,6 @@ if you got any error or something confused please email to <a href="mailto:ix.ha
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
