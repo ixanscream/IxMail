@@ -46,7 +46,8 @@
 
 <p>PM&gt; Install-Package IxMail</p>
 
-<p>after installation you will see you <code>web.config</code> change like this :</p>
+<p>after installation you will see you <code>web.config</code> change like this :
+and change with your account.</p>
 
 <div class="highlight highlight-c#"><pre>&lt;system.net&gt;
         &lt;mailSettings&gt;
@@ -64,6 +65,55 @@
 <span class="pl-s1">            --&gt;</span>
 <span class="pl-s1">        &lt;/mailSettings&gt;</span>
 <span class="pl-s1">    &lt;/system.net&gt;</span></pre></div>
+
+<p>Now add this class,  wich this class will become your object to send your mail</p>
+
+<pre><code>// 
+    public class IxMailTes
+    {
+        public string Name { get; set; }
+        public string UserName { get; set; }
+        public bool IsActive { get; set; }
+    }
+</code></pre>
+
+<p>and run this code below :</p>
+
+<pre><code>            IxMailTes imt = new IxMailTes();
+            imt.Name = "My Name";
+            imt.UserName = "My User Name";
+            imt.IsActive = true;
+
+            IxWebMail IWW = new IxWebMail();
+            IWW.BuildBody(imt, "yourtemplate")
+                .EmailTo("yourmail")
+                .EmailSubject("Activation")
+                .Send();
+</code></pre>
+
+<p>there is 2 options method to send
+1. You can send it live with <code>.Send()</code>.
+2. Or you can send it as background process, this will be improve, when your application with big transaction <code>SendBackground()</code>.</p>
+
+<p>After you run all above, you will be see hidden directory in your project, directory address is <strong>/Views/IxMail</strong>, and you can add your template there.</p>
+
+<p>example tamplate with html/txt</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Hallo {{Name}} &lt;br /&gt;
+    Your user name is {{UserName}} &lt;br /&gt;
+    You ar also {{IsActive}}
+
+    &lt;a href="http://ixanscream.github.io/IxMail"&gt;Visit&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>separator of <code>{{Your Object}}</code> would be replaced</p>
       </section>
     </div>
 
