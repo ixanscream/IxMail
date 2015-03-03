@@ -101,6 +101,19 @@ and change with your account.</p>
 <li>2. Or you can send it as background process, this will be improves, when your application with big transactions, I recommend use this <code>SendBackground()</code>.</li>
 </ul>
 
+<p>How to add attachment? cc? bcc?</p>
+
+<pre><code> IxWebMail IWW = new IxWebMail();
+            IWW.BuildBody(imt, "demo.html")
+                .EmailTo("mail1","mail2","mail3","etx")
+                .CCTo("mail1","mail2","mail3","etx")
+                .BCCTo("mail1", "mail2", "mail3", "etx")
+                .EmailPriority(System.Net.Mail.MailPriority.High)
+                .Attacment(attachment1,attachment3,attachment3)
+                .EmailSubject("Activation")
+                .SendBackground();
+</code></pre>
+
 <p>After you run all codes above, you will see hidden directory (folder) in your project, directory address is <strong>/Views/IxMail</strong>, and you can put your template there.</p>
 
 <hr>
