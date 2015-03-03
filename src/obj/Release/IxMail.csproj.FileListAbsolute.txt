@@ -1,0 +1,8 @@
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\bin\Release\IxMail.dll
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\bin\Release\IxMail.pdb
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\bin\Release\RazorEngine.dll
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\bin\Release\System.Web.Razor.dll
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\bin\Release\RazorEngine.xml
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\bin\Release\System.Web.Razor.xml
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\obj\Release\IxMail.dll
+c:\users\ixan\documents\visual studio 2013\Projects\IxMail\IxMail\obj\Release\IxMail.pdb
