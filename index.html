@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Ixmail : Mail ASP.NET Helper templating">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <title>Ixmail</title>
+    <title>Ixmail by ixanscream</title>
   </head>
 
   <body>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ixanscream/IxMail">View on GitHub</a>
+    <header>
+      <div class="container">
+        <h1>Ixmail</h1>
+        <h2>Mail ASP.NET Helper templating</h2>
 
-          <h1 id="project_title">Ixmail</h1>
-          <h2 id="project_tagline">Mail ASP.NET Helper templating</h2>
+        <section id="downloads">
+          <a href="https://github.com/ixanscream/IxMail/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/ixanscream/IxMail/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/ixanscream/IxMail" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ixanscream/IxMail/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ixanscream/IxMail/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+    <div class="container">
+      <section id="main_content">
         <h1>
 <a id="ixmail" class="anchor" href="#ixmail" aria-hidden="true"><span class="octicon octicon-link"></span></a>IxMail</h1>
 
@@ -49,7 +46,7 @@
 <p>after installation you will see you <code>web.config</code> change like this :
 and change with your account.</p>
 
-<div class="highlight highlight-c#"><pre>&lt;system.net&gt;
+<div class="highlight highlight-c#"><pre>    &lt;system.net&gt;
         &lt;mailSettings&gt;
             &lt;!-- Method#<span class="pl-c1">1</span>: Configure smtp server credentials --&gt;
             &lt;smtp <span class="pl-k">from</span>=<span class="pl-s1"><span class="pl-pds">"</span>user@gmail.com<span class="pl-pds">"</span></span>&gt;
@@ -65,6 +62,8 @@ and change with your account.</p>
 <span class="pl-s1">            --&gt;</span>
 <span class="pl-s1">        &lt;/mailSettings&gt;</span>
 <span class="pl-s1">    &lt;/system.net&gt;</span></pre></div>
+
+<hr>
 
 <p>Now add this class,  wich this class will become your object to send your mail</p>
 
@@ -97,7 +96,9 @@ and change with your account.</p>
 
 <p>After you run all above, you will be see hidden directory in your project, directory address is <strong>/Views/IxMail</strong>, and you can add your template there.</p>
 
-<p>example tamplate with html/txt</p>
+<hr>
+
+<p>example template with html/txt</p>
 
 <pre><code>&lt;html&gt;
 &lt;head&gt;
@@ -113,16 +114,45 @@ and change with your account.</p>
 &lt;/html&gt;
 </code></pre>
 
-<p>separator of <code>{{Your Object}}</code> would be replaced</p>
-      </section>
-    </div>
+<p>The separator of <code>{{Your Object}}</code> would be replaced with your values.</p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Ixmail maintained by <a href="https://github.com/ixanscream">ixanscream</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
+<hr>
+
+<p>example template with cshtml with razor syntax</p>
+
+<pre><code>@model dynamic
+@{
+    string strUrl = Model.Url.Request.Url.AbsoluteUri;  
+
+}
+&lt;h4 style="color: #1b809e; border-bottom: 1px solid #eee;"&gt;
+    Wellcome
+&lt;/h4&gt;
+&lt;div style="border:1px solid #eee;border-left:5px solid #1b809e;padding:10px;margin-bottom:10px;"&gt;
+    &lt;h4 style="color: #1b809e;"&gt;
+        Dear @Model.Name
+    &lt;/h4&gt;
+    &lt;p&gt;
+        Information
+        User : @Model.UserName&lt;br /&gt;  
+        Active: @Model.IsActive
+    &lt;/p&gt;
+    Please &lt;a href="@strUrl"&gt;Click here&lt;/a&gt; to activate your account. &lt;br /&gt;
+&lt;/div&gt;
+
+</code></pre>
+
+<p>In cshtml you cannot use syntax such us <code>@Url.Content</code>,<code>@Url.Action</code>,  etc. so you just call it with <code>@Model.Url.Bla Bla Bla</code>.</p>
+
+<hr>
+
+<p>you can also trace your error log when email sent or fail, just look into directory <strong>/Views/IxMail</strong></p>
+
+<p>i hope this helps
+Thanks cheers :D</p>
+
+<p>if you got any error or something that makes you confused, you can email me <a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a></p>
+      </section>
     </div>
 
               <script type="text/javascript">
@@ -135,7 +165,6 @@ and change with your account.</p>
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
-
 
   </body>
 </html>
