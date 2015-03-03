@@ -62,51 +62,7 @@
         &lt;/smtp&gt;
         --&gt;
     &lt;/mailSettings&gt;
-
-
-
-
-    **just run the code below : **
-
-
-        IxMailMessage iM = new IxMailMessage();
-        iM.mailBody = new SelectListItem { Value = "Value", Text = "Text", Selected = true };
-        iM.To.Add("ix.habibi@gmail.com");
-        iM.Subject = "this is subject";
-        iM.tamplateMail = "yourtamplate.html";
-        EmailCore.SendMailAsync(iM);
 </code></pre>
-
-<p>//you can add attachment or whatever, just type iM.Attachment &lt;-- for example
-    after you run this code (above), you'll see hidden folder ixMail, you can add your custom tamplate there.</p>
-
-<p>how to create your own tamplete?</p>
-
-<p>you create txtfile or html, with object example object to send : <strong>new SelectListItem { Value = "Value", Text = "Text", Selected = true };</strong></p>
-
-<pre><code>you create your html file just like this
-
-&lt;html&gt;
-&lt;head&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    Value : {{Value}}
-    Text : {{Text}}
-    Selected : {{Selected}}
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-
-<p>//
-    save it, place it into IxMail folder
-    the separator {{ }} will replace your value.</p>
-
-<p>save it and place it into
-hidden folder :</p>
-
-<hr>
-
-<p><img src="http://oi60.tinypic.com/r0qtjt.jpg" alt=""></p>
 
 <p>thank you
 if you got any error or something confused please email to <a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a> :D cheers</p>
