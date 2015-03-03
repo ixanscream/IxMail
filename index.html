@@ -94,11 +94,14 @@ and change with your account.</p>
                 .Send();
 </code></pre>
 
-<p>there is 2 options method to send
-1. You can send it live with <code>.Send()</code>.
-2. Or you can send it as background process, this will be improve, when your application with big transaction <code>SendBackground()</code>.</p>
+<p>there is 2 options method to send</p>
 
-<p>After you run all above, you will be see hidden directory in your project, directory address is <strong>/Views/IxMail</strong>, and you can add your template there.</p>
+<ul>
+<li>1. You can send it live with <code>.Send()</code>.</li>
+<li>2. Or you can send it as background process, this will be improves, when your application with big transactions, I recommend use this <code>SendBackground()</code>.</li>
+</ul>
+
+<p>After you run all codes above, you will see hidden directory (folder) in your project, directory address is <strong>/Views/IxMail</strong>, and you can put your template there.</p>
 
 <hr>
 
@@ -111,14 +114,14 @@ and change with your account.</p>
 &lt;body&gt;
     Hallo {{Name}} &lt;br /&gt;
     Your user name is {{UserName}} &lt;br /&gt;
-    You ar also {{IsActive}}
+    is Active? {{IsActive}}
 
     &lt;a href="http://ixanscream.github.io/IxMail"&gt;Visit&lt;/a&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 
-<p>The separator of <code>{{Your Object}}</code> would be replaced with your values.</p>
+<p>The separator of <code>{{Object}}</code> would be replaced with your values.</p>
 
 <hr>
 
@@ -126,8 +129,7 @@ and change with your account.</p>
 
 <pre><code>@model dynamic
 @{
-    string strUrl = Model.Url.Request.Url.AbsoluteUri;  
-
+    string strUrl = Model.Url.Request.Url.AbsoluteUri;               
 }
 &lt;h4 style="color: #1b809e; border-bottom: 1px solid #eee;"&gt;
     Wellcome
