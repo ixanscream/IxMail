@@ -1,34 +1,25 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Ixmail by ixanscream</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Ixmail</h1>
-        <p>Mail ASP.NET Helper templating</p>
+    <section class="page-header">
+      <h1 class="project-name">Ixmail</h1>
+      <h2 class="project-tagline">Mail ASP.NET Helper templating</h2>
+      <a href="https://github.com/ixanscream/IxMail" class="btn">View on GitHub</a>
+      <a href="https://github.com/ixanscream/IxMail/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ixanscream/IxMail/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/ixanscream/IxMail">View the Project on GitHub <small>ixanscream/IxMail</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/ixanscream/IxMail/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/ixanscream/IxMail/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ixanscream/IxMail">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="ixmail" class="anchor" href="#ixmail" aria-hidden="true"><span class="octicon octicon-link"></span></a>IxMail</h1>
 
 <p>ASP.NET (MVC, Web form) Templating Email</p>
@@ -54,19 +45,19 @@ and change with your account.</p>
 <div class="highlight highlight-c#"><pre>    &lt;system.net&gt;
         &lt;mailSettings&gt;
             &lt;!-- Method#<span class="pl-c1">1</span>: Configure smtp server credentials --&gt;
-            &lt;smtp <span class="pl-k">from</span>=<span class="pl-s1"><span class="pl-pds">"</span>user@gmail.com<span class="pl-pds">"</span></span>&gt;
-                &lt;network enableSsl=<span class="pl-s1"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> host=<span class="pl-s1"><span class="pl-pds">"</span>smtp.gmail.com<span class="pl-pds">"</span></span> port=<span class="pl-s1"><span class="pl-pds">"</span>587<span class="pl-pds">"</span></span> userName=<span class="pl-s1"><span class="pl-pds">"</span>user@gmail.com<span class="pl-pds">"</span></span> password=<span class="pl-s1"><span class="pl-pds">"</span>Password<span class="pl-pds">"</span></span> /&gt;
+            &lt;smtp <span class="pl-k">from</span>=<span class="pl-s"><span class="pl-pds">"</span>user@gmail.com<span class="pl-pds">"</span></span>&gt;
+                &lt;network enableSsl=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span> host=<span class="pl-s"><span class="pl-pds">"</span>smtp.gmail.com<span class="pl-pds">"</span></span> port=<span class="pl-s"><span class="pl-pds">"</span>587<span class="pl-pds">"</span></span> userName=<span class="pl-s"><span class="pl-pds">"</span>user@gmail.com<span class="pl-pds">"</span></span> password=<span class="pl-s"><span class="pl-pds">"</span>Password<span class="pl-pds">"</span></span> /&gt;
             &lt;/smtp&gt;
 
             &lt;!-- Method#<span class="pl-c1">2</span>: Dump emails to a local directory --&gt;
             &lt;!--
-            &lt;smtp <span class="pl-k">from</span>=<span class="pl-s1"><span class="pl-pds">"</span>some-email@gmail.com<span class="pl-pds">"</span></span> deliveryMethod=<span class="pl-s1"><span class="pl-pds">"</span>SpecifiedPickupDirectory<span class="pl-pds">"</span></span>&gt;
-                &lt;network host=<span class="pl-s1"><span class="pl-pds">"</span>localhost<span class="pl-pds">"</span></span>/&gt;
-                &lt;specifiedPickupDirectory pickupDirectoryLocation=<span class="pl-s1"><span class="pl-pds">"</span>c:<span class="pl-cce">\t</span>emp<span class="pl-cce">\"</span>/&gt;</span>
-<span class="pl-s1">            &lt;/smtp&gt;</span>
-<span class="pl-s1">            --&gt;</span>
-<span class="pl-s1">        &lt;/mailSettings&gt;</span>
-<span class="pl-s1">    &lt;/system.net&gt;</span></pre></div>
+            &lt;smtp <span class="pl-k">from</span>=<span class="pl-s"><span class="pl-pds">"</span>some-email@gmail.com<span class="pl-pds">"</span></span> deliveryMethod=<span class="pl-s"><span class="pl-pds">"</span>SpecifiedPickupDirectory<span class="pl-pds">"</span></span>&gt;
+                &lt;network host=<span class="pl-s"><span class="pl-pds">"</span>localhost<span class="pl-pds">"</span></span>/&gt;
+                &lt;specifiedPickupDirectory pickupDirectoryLocation=<span class="pl-s"><span class="pl-pds">"</span>c:<span class="pl-cce">\t</span>emp<span class="pl-cce">\"</span>/&gt;</span>
+<span class="pl-s">            &lt;/smtp&gt;</span>
+<span class="pl-s">            --&gt;</span>
+<span class="pl-s">        &lt;/mailSettings&gt;</span>
+<span class="pl-s">    &lt;/system.net&gt;</span></pre></div>
 
 <hr>
 
@@ -170,15 +161,17 @@ and change with your account.</p>
 <p>i hope this helps
 Thanks cheers :D</p>
 
-<p>if you got any error or something that makes you confused, you can email me <a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a></p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/ixanscream">ixanscream</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p>if you got any errors or something that makes you confused, you can email me <a href="mailto:ix.habibi@gmail.com">ix.habibi@gmail.com</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ixanscream/IxMail">Ixmail</a> is maintained by <a href="https://github.com/ixanscream">ixanscream</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
+
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -191,3 +184,4 @@ Thanks cheers :D</p>
 
   </body>
 </html>
+
